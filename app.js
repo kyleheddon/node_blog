@@ -11,6 +11,12 @@ var express = require('express')
 
 var app = express();
 
+var mongo = require('mongodb');
+var mongoUri = process.env.MONGOLAB_URI || 
+  process.env.MONGOHQ_URL || 
+  'mongodb://localhost/mydb'; 
+var redis = require('redis-url').connect(process.env.REDISTOGO_URL);
+
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
