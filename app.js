@@ -43,9 +43,9 @@
     console.log('Client connected...');
     return client.on('message', function(message) {
       console.log(message);
+      client.broadcast.emit('message', message);
       return setTimeout(function() {
-        client.broadcast.emit('message', message);
-        return client.emit('message', 'ahh');
+        return client.emit('message', 'you said ' + message + ' 1 second ago');
       }, 1000);
     });
   });
