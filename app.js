@@ -46,7 +46,7 @@
       return setTimeout(function() {
         client.broadcast.emit('message', message);
         return client.emit('message', 'ahh');
-      }, 0);
+      }, 1000);
     });
   });
 
