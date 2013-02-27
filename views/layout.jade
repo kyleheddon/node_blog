@@ -4,9 +4,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
-    script(src="http://localhost:3000/socket.io/socket.io.js")
+    script(src="socket.io/socket.io.js")
     script
-         var server = io.connect('http://localhost:3000');
+         var server = io.connect('');
          server.on('message', function(messages){
            console.log(messages);
          });
