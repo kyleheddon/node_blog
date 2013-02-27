@@ -50,6 +50,6 @@
     return res.render('index.jade');
   });
 
-  app.listen(54051);
+  app.listen(process.env.PORT || 5000);
 
 }).call(this);
