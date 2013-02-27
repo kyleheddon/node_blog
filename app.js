@@ -33,9 +33,10 @@
   socket = require('socket.io');
 
   io = socket.listen(app);
-  io.configure ->
-    io.set("transports", ["xhr-polling"])
-    io.set("polling duration", 10)
+  io.configure(function () {
+    io.set("transports", ["xhr-polling"]);
+    io.set("polling duration", 10);
+  });
 
   io.on('connection', function(client) {  
     client.broadcast.emit('message', 'Client connected...');
